@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+
+  db:
+    extends:
+      file: ./mysql/docker-compose.yml
+      service: db
+  adminer:
+    extends:
+      file: ./mysql/docker-compose.yml
+      service: adminer
+    depends_on:
+      - db
+
+  app:
+    image: jho4us/tc-frontend:latest
+    restart: always
+    ports:
+      - "8080:3000"
+    links:
+      - backend
+
+  backend:
+    image: jho4us/tc-backend:latest
+    restart: always
+    environment:
+      - TC_PORT=3001
+      - TC_DB_CONFIG=/go/bin/db-config-docker.json
+    ports:
+      - "3001:3001"
+    links:
+      - db
+    depends_on:
+      - db

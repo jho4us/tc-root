@@ -1,0 +1,6 @@
+[submodule "backend/tc"]
+	path = backend/tc
+	url = ssh://git@github.com/jho4us/tc.git
+[submodule "frontend"]
+	path = frontend
+	url = ssh://git@github.com/jho4us/tc-frontend.git

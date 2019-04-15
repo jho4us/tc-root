@@ -5,6 +5,9 @@
 
 set -e
 
+BASEDIR=$(dirname "$0")
+pushd $BASEDIR
+
 REBUILD=true
 
 while getopts nh opt; do
@@ -48,3 +51,4 @@ ENDTIME=`date +%s.%N`
 TIMEDIFF=`echo "$ENDTIME - $STARTTIME" | bc | awk -F"." '{print $1"."substr($2,1,3)}'`
 
 echo "Time elapsed: $TIMEDIFF"
+popd

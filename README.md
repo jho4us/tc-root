@@ -7,5 +7,5 @@ Tests constructor demo app
 - `./frontend/docker-build.sh production`
 - `docker-compose up -d`
 - Navigate to localhost:8082 and create tstore_dev database using utf8
-- `$GOPATH/bin/goose -path $GOPATH/src/github.com/jho4us/tc/testdb/sqlite up`
+- `$GOPATH/bin/goose -path $GOPATH/src/github.com/jho4us/tc/testdb/mysql up`
 - Navigate to localhost:8080

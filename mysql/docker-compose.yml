@@ -3,7 +3,7 @@ version: '2'
 services:
 
   db:
-    image: mysql
+    image: mysql@sha256:a7cf659a764732a27963429a87eccc8457e6d4af0ee9d5140a3b56e74986eed7
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -15,7 +15,7 @@ services:
       # Opens port 3306 on the container
       - '3306'
   adminer:
-    image: adminer
+    image: adminer@sha256:64c04eeddb60adb339decfb9dc4654131b52fe536fed1f8cb1ba8343bdbcf1c9
     restart: always
     ports:
       - 8082:8080
